@@ -12,6 +12,7 @@
     "ejs": "^2.3.4",
     "event-stream": "^3.3.2",
     "express": "^4.13.3",
+    "event-stream": "^3.3.2",
     "glob": "^6.0.1",
     "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",

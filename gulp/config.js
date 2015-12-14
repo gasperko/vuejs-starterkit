@@ -13,7 +13,7 @@ module.exports = {
   },
 
   nodemon: {
-    script: server.entry
+    script: "server/" + server.entry
   },
 
   javascript: {
@@ -67,7 +67,7 @@ module.exports = {
   },
 
   browserSync: {
-
+    
     server: {
       proxy: server.url + ':' + server.port,
       port: proxy,

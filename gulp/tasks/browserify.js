@@ -15,21 +15,17 @@ var gulpif     = require('gulp-if');
 var glob       = require('glob');
 var reload     = require('browser-sync').reload;
 var vueify     = require('vueify');
+var util       = require('gulp-util');
 var config     = require('../config').browserify;
 var babelCfg   = require('../config').babel;
 var watch      = require('../config').watch;
 var jsCfg      = require('../config').javascript;
 
 gulp.task('browserify', function(){
-    bundle( jsCfg.default );
-});
 
-gulp.task('browserify:dev', function(){
-    bundle( jsCfg.dev );
-});
+    var context = util.env.context == undefined ? "dev" : util.env.context;
+    bundle( jsCfg[ context ] );
 
-gulp.task('browserify:build', function(){
-    bundle( jsCfg.build );
 });
 
 function bundle( jsConfig ){
